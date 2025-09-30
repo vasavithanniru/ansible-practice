@@ -10,5 +10,5 @@
   tasks:  
   - name: print the info
     ansible.builtin.debug:
-    msg: "Hi I am {{NAME}}. Living in {{CITY}}, {{COUNTRY}}."   
+      msg: "Hi I am {{NAME}}. Living in {{CITY}}, {{COUNTRY}}."   
 
