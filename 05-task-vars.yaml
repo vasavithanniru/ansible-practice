@@ -1,0 +1,31 @@
+- name: Task level vars
+  hosts: web
+  vars:
+    NAME: "Vasavi"
+    GREETING: "Morning"
+  tasks:
+  - name: Print info
+    ansible.builtin.debug:
+      msg: "Hi {{NAME}}, good {{GREETING}}"
+  
+  - name: Print info again
+    vars: 
+      NAME: "Deekshi"
+    ansible.builtin.debug:
+      msg: "Hi {{NAME}}, good {{GREETING}}"
+
+  - name: Print info again and again
+    ansible.builtin.debug:
+      msg: "Hi {{NAME}}, good {{GREETING}}"       
+
+
+
+
+
+
+
+
+
+
+
+

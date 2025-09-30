@@ -1,0 +1,11 @@
+- name: Vars from file
+  hosts: web
+  vars_files:
+  - vars.yaml
+  tasks:
+  - name: Print info
+    ansible.builtin.debug:
+      msg: "Hi {{NAME}} good {{GREETING}}"
+
+
+    

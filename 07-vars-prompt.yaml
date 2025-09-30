@@ -1,0 +1,12 @@
+- name: vars from prompt
+  hosts: web
+  vars_prompt:
+  - name: NAME
+    prompt: please enter the name
+  - name: COUNTRY
+    prompt: Please enter the country name
+  - name: CITY
+    prompt: Please enter the city name 
+  ansible.builtin.debug:
+    msg: "Hi I am {{NAME}}. Living in {{CITY}}, {{COUNTRY}}."   
+

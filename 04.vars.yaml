@@ -1,0 +1,10 @@
+- name: Variables
+  hosts: web
+  vars:
+    NAME: "Vasavi"
+    GREETING: "Morning"
+  tasks: 
+  - name: Print the vars
+    ansible.builtin.debug:
+      msg: "Hi {{NAME}}, Good {{GREETING}}!"
+
