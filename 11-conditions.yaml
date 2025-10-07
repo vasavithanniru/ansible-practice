@@ -9,4 +9,9 @@
   - name: print this if less than 10
     ansible.builtin.debug:
       msg: "Given {{NUMBER}} is less than 10"
-    when: NUMBER | int < 10     
+    when: NUMBER | int < 10  #by default its giving error if ew dont give | int
+
+  - name: print this if given num is >= 10
+    ansible.builtin.debug:
+      msg: "Given {{NUMBER}} is >= 10"
+    when: NUMBER | int >= 10         
