@@ -9,4 +9,4 @@
   - name: print this if less than 10
     ansible.builtin.debug:
       msg: "Given {{NUMBER}} is less than 10"
-    when: NUMBER < 19     
+    when: NUMBER | int < 10     
