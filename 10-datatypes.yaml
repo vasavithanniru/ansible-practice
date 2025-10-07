@@ -1,0 +1,25 @@
+- name: ansible data types
+  hosts: local
+  connection: local
+  vars: 
+    NAME: "Vasavi" #string
+    PLACE: AP
+    topics: #list
+    - Linux
+    - Shell
+    - Ansible
+    - Terraform
+    - Docker
+    - k8
+    learnt: true  #bool
+    tools: #map
+      ci: Jenkins
+      cm: Ansible
+      cloud: AWS
+      aws:
+        - IAM
+        - S3  
+  tasks: 
+  - name: print the info
+    ansible.builtin.debug:
+      msg: "Hi {{NAME}}, Live in {{PLACE}}, good at {{topics}}, is it? yes{{Learnt}}! I work with tools likd {{tools}}"
