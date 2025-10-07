@@ -22,4 +22,4 @@
   tasks: 
   - name: print the info
     ansible.builtin.debug:
-      msg: "Hi {{NAME}}, Live in {{PLACE}}, good at {{topics}}, is it? yes{{Learnt}}! I work with tools likd {{tools}}"
+      msg: "Hi {{NAME}}, Live in {{PLACE}}, good at {{topics}}, is it? yes{{learnt}}! I work with tools like {{tools}}"
