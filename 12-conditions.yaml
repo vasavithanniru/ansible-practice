@@ -15,3 +15,18 @@
   - name: create user  
     ansible.builtin.command: useradd expense 
     when: USER.rc != 0
+
+- name: create another user
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+  - name: check user exists or not
+    anible.builtin.command: id robo
+    register: user
+
+  - name: print the user info
+    ansible.builtin.debug:
+      msg: "user info {{user}}"  
+
+
