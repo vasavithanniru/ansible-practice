@@ -16,12 +16,4 @@
     ansible.builtin.command: useradd expense 
     when: USER.rc != 0
 
-  - name: check robo user exists or not
-    anible.builtin.command: id robo
-    register: USER
-
-  - name: print the user info
-    ansible.builtin.debug:
-      msg: "user info {{USER}}"  
-
 
