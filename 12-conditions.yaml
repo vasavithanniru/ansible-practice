@@ -18,10 +18,10 @@
 
   - name: check robo user exists or not
     anible.builtin.command: id robo
-    register: user
+    register: USER
 
   - name: print the user info
     ansible.builtin.debug:
-      msg: "user info {{user}}"  
+      msg: "user info {{USER}}"  
 
 
