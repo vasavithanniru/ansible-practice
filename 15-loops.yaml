@@ -1,0 +1,13 @@
+- name: Install the packages
+  hosts: local
+  connection: local
+  become: yes
+  tasks: 
+  - name: Install the following packages
+    ansible.builtin.package:
+      name: {{item}}
+      sate: present
+    loop:
+    - nginx
+    - mysql
+    - postfix  
