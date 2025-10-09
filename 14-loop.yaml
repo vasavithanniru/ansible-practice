@@ -1,0 +1,11 @@
+- name: loops practice
+  hosts: local
+  connection: local
+  tasks:
+  - name: print the info
+    ansible.builtin.debug:
+      msg: "Hello {{item}}"
+    loop: 
+    - Ram
+    - Sita
+    - Gita  
