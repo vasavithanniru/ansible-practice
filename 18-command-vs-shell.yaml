@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   tasks:
-  - name: execut the command
+  - name: execut the shell command
     ansible.builtin.shell: ls -ltr > /tmp/output.txt
 
   - name: check the process
@@ -12,3 +12,7 @@
   # - name: show o/p  
   #   ansible.builtin.debug:
   #     msg: "{{output}}"  
+
+  - name: execute the command 
+    ansible.builtin.command: ps -ef | grep ssh  #this will not execut, we will get error
+    register: output3
