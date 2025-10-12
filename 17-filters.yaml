@@ -33,17 +33,17 @@
   - name: print map to list
     vars: 
       details:
-        Name: Vasavi
-        city: Nellore
-        state: AP
+        Name: "Vasavi"
+        city: "Nellore"
+        state: "AP"
     ansible.builtin.debug:
       msg: "{{course | dict2items}}"   
 
-  - name: print list to map
-    vars: 
-      details: 
-      - {"key": "name", "value": "vasavi"}
-      - {"key": "city", "value": "Nellore"}
-      - {"key": "state", "value": "AP"}
-    ansible.builtin.debug:
-      msg: "{{ details | items2dict }}"             
+  # - name: print list to map
+  #   vars: 
+  #     details: 
+  #     - {"key": "name", "value": "vasavi"}
+  #     - {"key": "city", "value": "Nellore"}
+  #     - {"key": "state", "value": "AP"}
+  #   ansible.builtin.debug:
+  #     msg: "{{ details | items2dict }}"             
