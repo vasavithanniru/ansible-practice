@@ -6,9 +6,9 @@
     ansible.builtin.shell: ls -ltr > /tmp/output.txt
 
   - name: check the process
-    ansible.builtin.shell: ps -ef | grep ssh
+    ansible.builtin.shell: ps -ef | grep ssh > /tmp/output2.txt
     register: output
 
-  - name: show o/p  
-    ansible.builtin.debug:
-      msg: "{{output}}"  
+  # - name: show o/p  
+  #   ansible.builtin.debug:
+  #     msg: "{{output}}"  
