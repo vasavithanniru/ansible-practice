@@ -10,5 +10,11 @@
     vars:
       greeting: "Hello Ram"  
     ansible.builtin.debug:
-      msg: "{{greeting | upper}}"    
+      msg: "{{greeting | upper}}"
+
+  - name: convert to lower
+    vars:
+      greeting: Hello Ramesh
+    ansible.builtin.debug:
+      msg: "{{ greeting | lower }}"           
 
