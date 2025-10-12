@@ -37,7 +37,7 @@
         city: "Nellore"
         state: "AP"
     ansible.builtin.debug:
-      msg: "{{course | dict2items}}"   
+      msg: "{{details | dict2items}}"   
 
   # - name: print list to map
   #   vars: 
