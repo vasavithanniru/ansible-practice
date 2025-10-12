@@ -4,7 +4,7 @@
   tasks:
   - name: print the default variable
     ansible.builtin.debug: 
-      msg: "Hello {{ details | default('vasavi') }}"
+      msg: "Hello {{ name | default('vasavi') }}"
 
   - name: convert to uppercase
     vars:
@@ -39,11 +39,11 @@
     ansible.builtin.debug:
       msg: "{{details | dict2items}}"   
 
-  # - name: print list to map
-  #   vars: 
-  #     details: 
-  #     - {"key": "name", "value": "vasavi"}
-  #     - {"key": "city", "value": "Nellore"}
-  #     - {"key": "state", "value": "AP"}
-  #   ansible.builtin.debug:
-  #     msg: "{{ details | items2dict }}"             
+  - name: print list to map
+    vars: 
+      details: 
+      - {"key": "name", "value": "vasavi"}
+      - {"key": "city", "value": "Nellore"}
+      - {"key": "state", "value": "AP"}
+    ansible.builtin.debug:
+      msg: "{{ details | items2dict }}"             
