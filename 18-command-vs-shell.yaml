@@ -7,4 +7,6 @@
 
   - name: check the process
     ansible.builtin.shell: ps -ef
-    register: output  
+    register: output
+    ansible.builtin.debug:
+      msg: "{{output}}"  
