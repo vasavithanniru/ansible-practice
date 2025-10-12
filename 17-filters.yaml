@@ -43,7 +43,7 @@
     vars: 
       details: 
       - {"key": "name", "value": "vasavi"}
-      - {"key": "city", "value": Nellore}
-      - {"key": state, "value": AP}
+      - {"key": "city", "value": "Nellore"}
+      - {"key": "state", "value": "AP"}
     ansible.builtin.debug:
       msg: "{{ details | items2dict }}"             
