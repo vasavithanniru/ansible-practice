@@ -28,4 +28,22 @@
     vars: 
       num: [1,2,3,4,5,6,6,7,8]   
     ansible.builtin.debug:
-      msg: "Min: {{num | min}}, Max: {{num | max}}"    
+      msg: "Min: {{num | min}}, Max: {{num | max}}"  
+
+  - name: print map to list
+    vars: 
+      details:
+        Name: Vasavi
+        city: Nellore
+        state: AP
+    ansible.builtin.debug:
+      msg: "{{course | dict2items}}"   
+
+  - name: print list to map
+    vars: 
+      details: 
+      - {"key": "name", "value": "vasavi"}
+      - {"key": "city", "value": Nellore}
+      - {"key": state, "value": AP}
+    ansible.builtin.debug:
+      msg: "{{ details | items2dict }}"             
