@@ -16,6 +16,6 @@
       vpc_subnet_id: "{{subnet_id}}"
       instance_type: t2.micro
       security_group: "{{sg_id}}"
-      image_id: "{{image_id:}}"
+      image_id: "{{image_id}}"
     loop: "{{instances}}"
     register: instances-output
