@@ -9,6 +9,7 @@
     - mysql
     - backend
     - frontend
+    zone: "vasavi.online"
   tasks:
   - name: Install boto3 and botocore
     ansible.builtin.pip:
@@ -26,3 +27,14 @@
       image_id: "{{image_id}}"
     loop: "{{instances}}"
     register: instances_info  #Hyphens (-) are not allowed in variable names
+
+  - name: Print instances info
+    ansible.builtin.debug:
+      msg: "instances info {{instances_info}}" 
+
+  # # private ip r53
+  # - name: Create r53 records
+  #   amazon.aws.route53:
+  #   state: present
+  #   zone: "{{zone}}" 
+  #   record:   
