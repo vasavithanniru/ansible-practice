@@ -57,5 +57,5 @@
       wait: true
       overwrite: true
     loop: "{{ instances_info.results }}" 
-    when: item.item == frontend   #when key word should not have {{}}
+    when: item.item == "frontend"   #when key word should not have {{}}
 
