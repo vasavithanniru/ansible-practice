@@ -10,6 +10,13 @@
     - backend
     - frontend
   tasks:
+  - name: Install boto3 and botocore
+    ansible.builtin.package:
+      name: 
+      - boto3
+      - botocore
+      executable: pip3.9
+      
   - name: create ec2 instance
     amazon.aws.ec2_instance:
       name: "{{item}}"
@@ -18,4 +25,4 @@
       security_group: "{{sg_id}}"
       image_id: "{{image_id}}"
     loop: "{{instances}}"
-    register: ec2_instances
+    register: instances_info  #Hyphens (-) are not allowed in variable names
