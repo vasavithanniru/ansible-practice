@@ -30,7 +30,7 @@
 
   - name: Print instances info
     ansible.builtin.debug:
-      msg: "instances info {{instances_info}}" 
+      msg: "{{ instances_info }}" 
 
   # # private ip r53
   # - name: Create r53 records
