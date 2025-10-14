@@ -43,5 +43,5 @@
       ttl: 1
       wait: true
       overwrite: true
-    loop: "{{instance_info.results}}"
+    loop: "{{instances_info.results}}"
 
