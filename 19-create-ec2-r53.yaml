@@ -20,12 +20,12 @@
 
   - name: create ec2 instance
     amazon.aws.ec2_instance:
-      name: "{{item}}"
-      vpc_subnet_id: "{{subnet_id}}"
+      name: "{{ item }}"
+      vpc_subnet_id: "{{ subnet_id }}"
       instance_type: "t2.micro"
-      security_group: "{{sg_id}}"
-      image_id: "{{image_id}}"
-    loop: "{{instances}}"
+      security_group: "{{ sg_id }}"
+      image_id: "{{ image_id }}"
+    loop: "{{ instances }}"
     register: instances_info  #Hyphens (-) are not allowed in variable names
 
   - name: Print instances info
@@ -36,14 +36,14 @@
   - name: Create r53 records
     amazon.aws.route53:
       state: present
-      zone: "{{zone}}" 
-      record: "{{item.item}}.{{zone}}"       #mysql.vasavi.online
-      value: "{{item.instances[0].private_ip_address}}"
+      zone: "{{ zone }}" 
+      record: "{{ item.item }}.{{ zone }}"       #mysql.vasavi.online
+      value: "{{ item.instances[0].private_ip_address }}"
       type: A
       ttl: 1
       wait: true
       overwrite: true
-    loop: "{{instances_info.results}}"
+    loop: "{{ instances_info.results }}"
 
 
   - name: Create r53 public record for frontend
